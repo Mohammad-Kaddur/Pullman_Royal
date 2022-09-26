@@ -20,8 +20,8 @@ let translations = {
     turkish: "Turkish",
     buyTicket: "Buy A Ticket At The Best Prices",
     buyNow: "Buy Now In Less Than Two Minutes",
-    startingCity: "Startig City",
-    accessCity: "Accsess City",
+    startingCity: "Starting City",
+    accessCity: "Access City",
     depertureDate: "Departure Date",
     passenger: "Passenger",
     search: "Search",
@@ -105,10 +105,11 @@ languageSelector.addEventListener("change", (e) => {
   localStorage.setItem("lan", e.target.value);
 });
 
-console.log(localStorage.getItem("lan"));
 document.addEventListener("DOMContentLoaded", () => {
   setLanguage(localStorage.getItem("lan"));
   if (localStorage.getItem("lan") == "ar") {
+    document.querySelector('[value="ar"]').setAttribute("selected", "");
+  } else if (localStorage.getItem("lan") == "tr") {
     document.querySelector('[value="ar"]').setAttribute("selected", "");
   }
 });
@@ -124,3 +125,128 @@ let setLanguage = (language) => {
     document.dir = "ltr";
   }
 };
+
+let startingCity = document.getElementById("startingCity");
+let accessCity = document.getElementById("accessCity");
+let dropdown = document.getElementById("dropdown");
+
+let arr = [
+  "ADANA",
+  "ADIYAMAN",
+  "AFYONKARAHİSAR",
+  "AĞRI",
+  "AMASYA",
+  "ANKARA",
+  "ANTALYA",
+  "ARTVİN",
+  "AYDIN",
+  "BALIKESİR",
+  "BİLECİK",
+  "BİNGÖL",
+  "BİTLİS",
+  "BOLU",
+  "BURDUR",
+  "BURSA",
+  "ÇANAKKALE",
+  "ÇANKIRI",
+  "ÇORUM",
+  "DENİZLİ",
+  "DİYARBAKIR",
+  "EDİRNE",
+  "ELAZIĞ",
+  "ERZİNCAN",
+  "ERZURUM",
+  "ESKİŞEHİR",
+  "GAZİANTEP",
+  "GİRESUN",
+  "GÜMÜŞHANE",
+  "HAKKARİ",
+  "HATAY",
+  "ISPARTA",
+  "MERSİN",
+  "İSTANBUL",
+  "İZMİR",
+  "KARS",
+  "KASTAMONU",
+  "KAYSERİ",
+  "KIRKLARELİ",
+  "KIRŞEHİR",
+  "KOCAELİ",
+  "KONYA",
+  "KÜTAHYA",
+  "MALATYA",
+  "MANİSA",
+  "KAHRAMANMARAŞ",
+  "MARDİN",
+  "MUĞLA",
+  "MUŞ",
+  "NEVŞEHİR",
+  "NİĞDE",
+  "ORDU",
+  "RİZE",
+  "SAKARYA",
+  "SAMSUN",
+  "SİİRT",
+  "SİNOP",
+  "SİVAS",
+  "TEKİRDAĞ",
+  "TOKAT",
+  "TRABZON",
+  "TUNCELİ",
+  "ŞANLIURFA",
+  "UŞAK",
+  "VAN",
+  "YOZGAT",
+  "ZONGULDAK",
+  "AKSARAY",
+  "BAYBURT",
+  "KARAMAN",
+  "KIRIKKALE",
+  "BATMAN",
+  "ŞIRNAK",
+  "BARTIN",
+  "ARDAHAN",
+  "IĞDIR",
+  "YALOVA",
+  "KARABÜK",
+  "KİLİS",
+  "OSMANİYE",
+  "DÜZCE",
+];
+let cities = "";
+
+startingCity.onclick = function () {
+  dropdown.classList.toggle("show");
+  cityContent();
+};
+accessCity.onclick = function () {
+  dropdownAccess.classList.toggle("show");
+  cityContentAccess();
+};
+// #######
+console.log((dropdownAccess.getAttribute(('[class="dropdown-content show"]'))))
+
+if ((dropdown.hasAttribute('class="show"'))) {
+  dropdownAccess.classList= "dropdown-content";
+}if ((dropdownAccess.hasAttribute('class="show"'))) {
+  dropdown.classList= "dropdown-content";
+}
+// #######
+function cityContentAccess() {
+  for (let i = 0; i < arr.length; i++) {
+    let mainDiv = document.createElement("div");
+    let textDiv = document.createTextNode(arr[i]);
+    mainDiv.classList = "item";
+    mainDiv.appendChild(textDiv);
+    dropdownAccess.appendChild(mainDiv);
+  }
+}
+function cityContent() {
+  for (let i = 0; i < arr.length; i++) {
+    let mainDiv = document.createElement("div");
+    let textDiv = document.createTextNode(arr[i]);
+    mainDiv.classList = "item";
+    mainDiv.appendChild(textDiv);
+    dropdown.appendChild(mainDiv);
+  }
+}

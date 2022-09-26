@@ -253,7 +253,7 @@ section .container {
 
 section .container .text {
     margin: auto;
-    padding: 80px 0px;
+    padding: 70px 0px;
     text-align: center;
 }
 
@@ -307,10 +307,33 @@ section .container .selects .select {
     border-radius: 15px;
     height: 100%;
     width: 100%;
+    position: relative;
 }
 
-section .container .selects .select .parag {
-    position: relative;
+section .container .selects .select .dropdown-content {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background-color: #eee;
+    width: 100%;
+    z-index: 10;
+    height: 300px;
+    overflow-y: scroll;
+    padding: 10px;
+    border-radius: 15px;
+    display: none;
+}
+section .container .selects .select #accessCity{
+    top: 45px;
+    position: absolute;
+}
+section .container .selects .select .dropdown-content .item {
+    padding: 10px;
+    border-bottom: 1px solid #aaa;
+}
+
+section .container .selects .select .show {
+    display: block;
 }
 
 section .container .selects .select .down {
@@ -383,6 +406,7 @@ section .container .selects .search {
     font-size: 35px;
     font-weight: 700;
     color: #3b4095;
+    line-height: 2.5;
 }
 
 .services .container .boxs {
