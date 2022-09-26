@@ -61,7 +61,7 @@ let translations = {
     continued: "استمرار الإصرار على تطوير النقل الراقي",
     lorem: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
     tourism: "سياحة",
-    trasport: "Transport",
+    trasport: "مواصلات",
     topPlaces: "افضل الاماكن",
     fatih: "Fatih",
     istanbul: "Istanbul",
@@ -99,10 +99,18 @@ let translations = {
 };
 
 let languageSelector = document.getElementById("language");
-
+let option = document.querySelector("option");
 languageSelector.addEventListener("change", (e) => {
   setLanguage(e.target.value);
   localStorage.setItem("lan", e.target.value);
+});
+
+console.log(localStorage.getItem("lan"));
+document.addEventListener("DOMContentLoaded", () => {
+  setLanguage(localStorage.getItem("lan"));
+  if (localStorage.getItem("lan") == "ar") {
+    document.querySelector('[value="ar"]').setAttribute("selected", "");
+  }
 });
 let setLanguage = (language) => {
   let elements = document.querySelectorAll("[data-lan]");
