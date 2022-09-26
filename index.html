@@ -32,21 +32,21 @@
                     <i class="fa-regular fa-circle-xmark hide" style="color: #fff;" id="hide"></i>
                     <ul>
                         <li>
-                            <a href="">Welcome</a>
+                            <a href="" data-lan="home">Home</a>
                         </li>
                         <li>
-                            <a href="">Contact Us</a>
+                            <a href="" data-lan="contact">Contact Us</a>
                         </li>
                         <li>
-                            <a href="">About Us</a>
+                            <a href="" data-lan="about">About Us</a>
                         </li>
                     </ul>
                     <form action="">
-                        <label for="language">Language :</label>
+                        <label for="language" data-lan="language">Language :</label>
                         <select name="" id="language">
-                            <option value="english" selected>English</option>
-                            <option value="arabic">Arabic</option>
-                            <option value="turkish">Turkish</option>
+                            <option value="en" selected data-lan="english">English</option>
+                            <option value="ar" data-lan="arabic">Arabic</option>
+                            <option value="tr" data-lan="turkish">Turkish</option>
                         </select>
                     </form>
                 </div>
@@ -60,14 +60,14 @@
     <section>
         <div class="container">
             <div class="text">
-                <h2>Buy A Ticket At <i style="font-size: 40px;">The Best Prices</i></h2>
-                <p>Buy Now In Less Then Two Minutes</p>
+                <h2 data-lan="buyTicket">Buy A Ticket At <i style="font-size: 40px;">The Best Prices</i></h2>
+                <p data-lan="buyNow">Buy Now In Less Than Two Minutes</p>
             </div>
             <div class="selects">
                 <div class="select">
                     <div class="parag" id="start">
                         <i class="fa-solid fa-location-arrow"></i>
-                        <span>Startig City</span>
+                        <span data-lan="startingCity">Startig City</span>
                     </div>
                     <div class="down">
                         <i class="fa-solid fa-angle-down"></i>
@@ -76,7 +76,7 @@
                 <div class="select">
                     <div class="parag">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>Accsess City</span>
+                        <span data-lan="accessCity">Accsess City</span>
                     </div>
                     <div class="down">
                         <i class="fa-solid fa-angle-down"></i>
@@ -85,7 +85,7 @@
                 <div class="select">
                     <div class="parag">
                         <i class="fa-regular fa-calendar-days"></i>
-                        <span>Departure Date</span>
+                        <span data-lan="depertureDate">Departure Date</span>
                     </div>
                     <div class="down">
                         <i class="fa-solid fa-angle-down"></i>
@@ -94,14 +94,14 @@
                 <div class="select">
                     <div class="parag">
                         <i class="fa-solid fa-person-walking"></i>
-                        <span>Passenger</span>
+                        <span data-lan="passenger">Passenger</span>
                     </div>
                     <div class="down">
                         <i class="fa-solid fa-angle-down"></i>
                     </div>
                 </div>
                 <div class="select search">
-                    <span>Search</span>
+                    <span data-lan="search">Search</span>
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
@@ -113,37 +113,37 @@
 
     <div class="services">
         <div class="textServ">
-            <h3>Services</h3>
-            <span>What We Offer You</span>
+            <h3 data-lan="services">Services</h3>
+            <span data-lan="offerYou">What We Offer You</span>
         </div>
         <div class="container">
             <div class="boxs">
                 <div class="box">
                     <i class="fa-solid fa-bus-simple"></i>
                     <div>
-                        <span>Improvement</span>
-                        <p>Continued Insestment In High-End Transport Development</p>
+                        <span data-lan="improvement">Improvement</span>
+                        <p data-lan="continued">Continued Insestment In High-End Transport Development</p>
                     </div>
                 </div>
                 <div class="box">
                     <i class="fa-solid fa-signs-post"></i>
                     <div>
-                        <span>Contact</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                        <span data-lan="contact">Contact</span>
+                        <p data-lan="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                     </div>
                 </div>
                 <div class="box">
                     <i class="fa-solid fa-earth-americas"></i>
                     <div>
-                        <span>Tourism</span>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
+                        <span data-lan="tourism">Tourism</span>
+                        <p data-lan="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
                     </div>
                 </div>
                 <div class="box">
                     <i class="fa-solid fa-van-shuttle"></i>
                     <div>
-                        <span>Transport</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                        <span data-lan="trasport">Transport</span>
+                        <p data-lan="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                     </div>
                 </div>
             </div>
@@ -154,8 +154,8 @@
     <!-- Start Places -->
     <div class="place">
         <div class="textServ">
-            <h3>Top Places</h3>
-            <span>What We Offer You</span>
+            <h3 data-lan="topPlaces">Top Places</h3>
+            <span data-lan="offerYou">What We Offer You</span>
         </div>
         <div class="container">
             <div class="images">
@@ -165,12 +165,12 @@
                     </div>
                     <div class="city">
                         <div class="info">
-                            <span>Fatih</span>
-                            <span>Istanbul</span>
+                            <span data-lan="fatih">Fatih</span>
+                            <span data-lan="istanbul">Istanbul</span>
                         </div>
                         <div class="person">
                             <span>500 TL</span>
-                            <span>Price</span>
+                            <span data-lan="price">Price</span>
                         </div>
                     </div>
                 </div>
@@ -183,15 +183,16 @@
         <div class="container">
             <div class="box">
                 <span>Pullman Royal</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim laborum magnam commodi quia deserunt id
+                <p data-lan="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim laborum magnam commodi
+                    quia deserunt id
                     magni ea repudiandae totam?</p>
             </div>
             <div class="box">
-                <span>Contact Us</span>
+                <span data-lan="conatct">Contact Us</span>
                 <a href="">
                     <div class="location">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>Istanbul, Turkye</span>
+                        <span data-lan="istanbulTurkey">Istanbul, Turkye</span>
                     </div>
                 </a>
                 <a href="">
