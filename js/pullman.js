@@ -129,6 +129,11 @@ let setLanguage = (language) => {
 let startingCity = document.getElementById("startingCity");
 let accessCity = document.getElementById("accessCity");
 let dropdown = document.getElementById("dropdown");
+let startingChoice = document.getElementById("startingChoice");
+let accessChoice = document.getElementById("accessChoice");
+let search = document.querySelector(".search");
+let startingCityIcon = document.getElementById("startingCityIcon");
+let accessCityIcon = document.getElementById("accessCityIcon");
 
 let arr = [
   "ADANA",
@@ -217,30 +222,25 @@ let cities = "";
 
 startingCity.onclick = function () {
   dropdown.classList.toggle("show");
+  startingCityIcon.classList.toggle("startingCityIcon");
   cityContent();
 };
 accessCity.onclick = function () {
   dropdownAccess.classList.toggle("show");
+  accessCityIcon.classList.toggle("accessCityIcon");
   cityContentAccess();
 };
 // #######
-console.log((dropdownAccess.getAttribute(('[class="dropdown-content show"]'))))
 
-if ((dropdown.hasAttribute('class="show"'))) {
-  dropdownAccess.classList= "dropdown-content";
-}if ((dropdownAccess.hasAttribute('class="show"'))) {
-  dropdown.classList= "dropdown-content";
+if (dropdown.hasAttribute('class="show"')) {
+  dropdownAccess.classList = "dropdown-content";
 }
+if (dropdownAccess.hasAttribute('class="show"')) {
+  dropdown.classList = "dropdown-content";
+}
+
 // #######
-function cityContentAccess() {
-  for (let i = 0; i < arr.length; i++) {
-    let mainDiv = document.createElement("div");
-    let textDiv = document.createTextNode(arr[i]);
-    mainDiv.classList = "item";
-    mainDiv.appendChild(textDiv);
-    dropdownAccess.appendChild(mainDiv);
-  }
-}
+
 function cityContent() {
   for (let i = 0; i < arr.length; i++) {
     let mainDiv = document.createElement("div");
@@ -248,5 +248,41 @@ function cityContent() {
     mainDiv.classList = "item";
     mainDiv.appendChild(textDiv);
     dropdown.appendChild(mainDiv);
+    mainDiv.onclick = function () {
+      startingChoice.innerHTML = arr[i];
+    };
   }
+  getRequest();
+}
+
+function cityContentAccess() {
+  for (let i = 0; i < arr.length; i++) {
+    let mainDiv = document.createElement("div");
+    let textDiv = document.createTextNode(arr[i]);
+    mainDiv.classList = "item";
+    mainDiv.appendChild(textDiv);
+    dropdownAccess.appendChild(mainDiv);
+    mainDiv.onclick = function () {
+      accessChoice.innerHTML = arr[i];
+    };
+  }
+  getRequest();
+}
+
+function getRequest() {
+  let request = new XMLHttpRequest();
+
+  request.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      let getResponseText = JSON.parse(this.responseText);
+      if (getResponseText[0].startingCity == startingChoice.innerText) {
+        console.log(true);
+      }
+      if (getResponseText[0].accessCity == accessChoice.innerText) {
+        console.log(true);
+      }
+    }
+  };
+  request.open("GET", "js/valid.json", true);
+  request.send();
 }

@@ -341,8 +341,16 @@ section .container .selects .select .show {
 
 section .container .selects .select .down {
     color: var(--main-color);
+   
 }
-
+section .container .selects .select .down >i{
+    transition: .5s;
+}
+section .container .selects .select .down .startingCityIcon,
+section .container .selects .select .down .accessCityIcon{
+transform: rotate(180deg);
+transition: .5s;
+}
 section .container .selects .search {
     font-size: 20px;
     font-weight: 600;
