@@ -319,16 +319,18 @@ section .container .selects .select .dropdown-content {
     z-index: 10;
     height: 300px;
     overflow-y: scroll;
-    padding: 10px;
     border-radius: 15px;
     display: none;
+    border: 1px solid #aaa;
 }
-section .container .selects .select #accessCity{
+
+section .container .selects .select #accessCity {
     top: 45px;
     position: absolute;
 }
+
 section .container .selects .select .dropdown-content .item {
-    padding: 10px;
+    padding: 10px 10px 10px 20px;
     border-bottom: 1px solid #aaa;
     color: #333;
     font-size: 15px;
@@ -341,16 +343,19 @@ section .container .selects .select .show {
 
 section .container .selects .select .down {
     color: var(--main-color);
-   
 }
-section .container .selects .select .down >i{
+
+section .container .selects .select .down>i {
     transition: .5s;
 }
+.accessDateIcon,
 section .container .selects .select .down .startingCityIcon,
-section .container .selects .select .down .accessCityIcon{
-transform: rotate(180deg);
-transition: .5s;
+section .container .selects .select .down .passengerIcon,
+section .container .selects .select .down .accessCityIcon {
+    transform: rotate(180deg);
+    transition: .5s;
 }
+
 section .container .selects .search {
     font-size: 20px;
     font-weight: 600;
@@ -383,6 +388,113 @@ section .container .selects .search {
 }
 
 /* End Section */
+
+/* calendar */
+.calendar {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    z-index: 100;
+    width: 150%;
+    height: fit-content;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #aaa;
+    display: none;
+}
+.selectDate{
+    display: block;
+}
+.calendar .header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+.calendar .header>button {
+    width: 40px;
+    height: 25px;
+    background-color: var(--main-color);
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    margin: auto 5px;
+    font-size: 15px;
+}
+
+.calendar .header>button:hover {
+    background-color: #673de6b3;
+}
+
+.calendar .header>span {
+    font-size: 15px;
+    color: var(--hover-color);
+}
+
+.calendar .days {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+
+.calendar .days .day {
+    font-size: 13px;
+    color: var(--hover-color);
+    width: 85px;
+    padding: 5px;
+    text-align: center;
+    
+}
+
+.calendar .dates {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.calendar .dates .date {
+    margin: 1px;
+    border: none;
+    width: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #aaa;
+}
+
+.calendar .dates .date:hover {
+    background-color: #eee;
+}
+
+@media(max-width:1199px) {
+    .calendar {
+        width: 100%;
+    }
+
+    .calendar .dates .date {
+        width: 100px;
+        margin: 10px;
+    }
+}
+@media(max-width:991px){
+    .calendar .dates .date {
+        width: 60px;
+    }
+}
+@media (max-width: 776px){
+    .calendar .dates .date {
+        width: 32px;
+        margin: 2px;
+    }
+}
+
+/* calendar */
+
 
 /* Start Services */
 

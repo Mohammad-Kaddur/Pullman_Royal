@@ -134,6 +134,10 @@ let accessChoice = document.getElementById("accessChoice");
 let search = document.querySelector(".search");
 let startingCityIcon = document.getElementById("startingCityIcon");
 let accessCityIcon = document.getElementById("accessCityIcon");
+let passenger = document.getElementById("passenger");
+let dropdownPassenger = document.getElementById("dropdownPassenger");
+let passengerIcon = document.getElementById("passengerIcon");
+let passengerChice = document.getElementById("passengerChice");
 
 let arr = [
   "ADANA",
@@ -218,6 +222,7 @@ let arr = [
   "OSMANİYE",
   "DÜZCE",
 ];
+let arrPassenger = { one: 1, two: 2, three: 3 };
 let cities = "";
 
 startingCity.onclick = function () {
@@ -230,17 +235,21 @@ accessCity.onclick = function () {
   accessCityIcon.classList.toggle("accessCityIcon");
   cityContentAccess();
 };
+passenger.onclick = function () {
+  dropdownPassenger.classList.toggle("show");
+  passengerIcon.classList.toggle("passengerIcon");
+  passengers();
+};
 // #######
 
 if (dropdown.hasAttribute('class="show"')) {
   dropdownAccess.classList = "dropdown-content";
 }
-if (dropdownAccess.hasAttribute('class="show"')) {
-  dropdown.classList = "dropdown-content";
-}
-
+// if (dropdownAccess.hasAttribute('class="show"')) {
+//   dropdown.classList = "dropdown-content";
+//   passengers();
+// }
 // #######
-
 function cityContent() {
   for (let i = 0; i < arr.length; i++) {
     let mainDiv = document.createElement("div");
@@ -268,6 +277,32 @@ function cityContentAccess() {
   }
   getRequest();
 }
+let dropdownContent = document.getElementsByClassName('dropdown-content');
+function passengers() {
+  // for (let i = 0; i < arrPassenger.length; i++) {
+  //   console.log(arrPassenger[i]);
+  //   let mainDiv = document.createElement("div");
+  //   let textDiv = document.createTextNode(arrPassenger[i]);
+  //   mainDiv.classList = "item";
+  //   mainDiv.appendChild(textDiv);
+  //   dropdownPassenger.appendChild(mainDiv);
+  //   mainDiv.onclick = function () {
+  //     passengerChice.innerHTML = arrPassenger[i];
+  //   };
+  // }
+  console.log(arrPassenger.one);
+  console.log(arrPassenger.two);
+  console.log(arrPassenger.three);
+
+  let mainDiv = document.createElement("div");
+  let textDiv = document.createTextNode(arrPassenger.three);
+  mainDiv.appendChild(textDiv);
+  dropdownPassenger.appendChild(mainDiv);
+  // if (dropdownContent.hasAttribute('class="dropdown-content show"')) {
+  //   dropdownPassenger.removeChild(mainDiv);
+  // }
+}
+
 
 function getRequest() {
   let request = new XMLHttpRequest();
@@ -286,3 +321,11 @@ function getRequest() {
   request.open("GET", "js/valid.json", true);
   request.send();
 }
+
+let showHideDate = document.getElementById("showHideDate");
+let selectDate = document.getElementById("selectDate");
+let accessDateIcon = document.getElementById("accessDateIcon");
+showHideDate.onclick = function () {
+  selectDate.classList.toggle("selectDate");
+  accessDateIcon.classList.toggle("accessDateIcon");
+};
